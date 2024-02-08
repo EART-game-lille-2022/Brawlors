@@ -3,15 +3,8 @@ using UnityEngine;
 
 public class PlayerColorManager : MonoBehaviour
 {
-    public static PlayerColorManager instance;
-
     [SerializeField] private List<ScriptableObjectColor> colorBag;
     [SerializeField] private ScriptableObjectColor colorToAdd;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     private void Start()
     {
