@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6963130766800018056}
   m_Layer: 0
   m_Name: Default Cell
-  m_TagString: Untagged
+  m_TagString: ColorableObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  startColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
+  startColor: {fileID: 11400000, guid: 90559f3ae0c15f243b50b2d3fd8fe4b8, type: 2}
   actualColor: {fileID: 11400000, guid: 2efbbe3b3ce8a8d419de19f67e797167, type: 2}
+  noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
 --- !u!212 &496563677815895154
 SpriteRenderer:
   m_ObjectHideFlags: 0

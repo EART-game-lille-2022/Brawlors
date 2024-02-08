@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 26441320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2838521, y: 4.14, z: -10}
+  m_LocalPosition: {x: -2.82, y: 3.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1257,7 +1257,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2838521, y: 4.14, z: -10}
+  m_LocalPosition: {x: -2.82, y: 3.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2382,13 +2382,15 @@ GameObject:
   - component: {fileID: 1143349277}
   - component: {fileID: 1143349279}
   - component: {fileID: 1143349280}
+  - component: {fileID: 1143349282}
+  - component: {fileID: 1143349281}
   - component: {fileID: 1143349278}
   - component: {fileID: 1143349274}
   - component: {fileID: 1143349276}
   - component: {fileID: 1143349275}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player Temporaire
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2497,7 +2499,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2516,7 +2518,7 @@ Transform:
   m_GameObject: {fileID: 1143349273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2838521, y: 4.14, z: 0}
+  m_LocalPosition: {x: -2.82, y: 3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2564,11 +2566,35 @@ MonoBehaviour:
     m_ActionId: 06da969d-cdae-4d12-8818-0327792bc4c0
     m_ActionName: Keyboard/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1143349282}
+        m_TargetAssemblyTypeName: PlayerGrapSystem, Assembly-CSharp
+        m_MethodName: GrapUngrap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9f9176d4-49db-4e8d-bc99-03f8da1ec67b
     m_ActionName: Keyboard/Grap/Ungrap[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1143349282}
+        m_TargetAssemblyTypeName: PlayerGrapSpitManager, Assembly-CSharp
+        m_MethodName: StealSpitColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 137f9835-d06f-4d77-a5ed-c646d9438fd0
     m_ActionName: Keyboard/Absorb/Spit[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2589,34 +2615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  isOnGround: 1
-  wavingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  wavingValue: 0
-  frequency: 1
-  wavingForce: 0
 --- !u!114 &1143349280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,10 +2628,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBag:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  colorToAdd: {fileID: 0}
+  - {fileID: 11400000, guid: d505e01521bd64040a498d111ee49b12, type: 2}
+  - {fileID: 11400000, guid: 2efbbe3b3ce8a8d419de19f67e797167, type: 2}
+  - {fileID: 11400000, guid: 08a42f2e3ce2bfc4981bcccd6f72833f, type: 2}
+  colorToAdd: {fileID: 11400000, guid: 90559f3ae0c15f243b50b2d3fd8fe4b8, type: 2}
+--- !u!232 &1143349281
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143349273}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 0
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 6
+  m_MaxDistanceOnly: 1
+--- !u!114 &1143349282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143349273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eafaa8bffd8914b408a05e292d0348eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceJoint2D: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  distanceMaxForGrap: 6
+  actualDistanceFromTheMouse: 0
+  grapCooldown: 0.25
+  canGrap: 0
+  isGrapActive: 0
 --- !u!1001 &1167438711
 PrefabInstance:
   m_ObjectHideFlags: 0
