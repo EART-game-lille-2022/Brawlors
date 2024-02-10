@@ -4,13 +4,16 @@ public class ObjectColorProperties : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private ScriptableObjectColor startColor;
-    [SerializeField] private ScriptableObjectColor actualColor;
+    public ScriptableObjectColor actualColor;
     [SerializeField] private ScriptableObjectColor noColor;
+
+    public bool isColorless;
 
     public void SwitchColor(ScriptableObjectColor colorToSwitchTo)
     {
         actualColor = colorToSwitchTo;
         spriteRenderer.color = actualColor.color;
+        CheckIfColorless();
     }
 
     private void Start()
@@ -23,16 +26,25 @@ public class ObjectColorProperties : MonoBehaviour
     {
         SwitchColor(colorToApply);
         actualColor = colorToApply;
+        CheckIfColorless();
     }
 
-    public void ColorStealed(ScriptableObjectColor colorStealed)
+    public void StealColor(out ScriptableObjectColor colorStealed)
     {
-        if(actualColor == noColor)
-        {
-            return;
-        }
         colorStealed = actualColor;
         SwitchColor(noColor);
+        CheckIfColorless();
     }
 
+    public void CheckIfColorless()
+    {
+        if (actualColor != noColor)
+        {
+            isColorless = false;
+        }
+        else
+        {
+            isColorless = true;
+        }
+    }
 }
