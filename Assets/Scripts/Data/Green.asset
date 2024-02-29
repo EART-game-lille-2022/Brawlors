@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   color: {r: 0, g: 1, b: 0, a: 1}
+  colorLayer: 12

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Levitator : MonoBehaviour
 {
@@ -8,26 +9,29 @@ public class Levitator : MonoBehaviour
     public float targetHeight;
     public float force = 5;
     public float jumpImpulse = 5;
+    public float cooldownForJump;
+    private float timeElapsed;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    public void Jump(InputAction.CallbackContext context)
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(timeElapsed >= cooldownForJump)
         {
-            Debug.Log("Jump!");
             rb2D.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
+            timeElapsed = 0;
         }
     }
 
     void FixedUpdate()
     {
+        timeElapsed += Time.fixedDeltaTime;
         RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, .1f, Vector2.down, targetHeight, layerMask);
 
-        if(hit2D.distance > 0 && hit2D.distance < targetHeight) 
+        if (hit2D.distance > 0 && hit2D.distance < targetHeight)
         {
             rb2D.AddForce(Vector2.up * force / hit2D.distance);
         }
