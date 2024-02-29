@@ -30,7 +30,7 @@ public class PlayerGrapUngrapManager : MonoBehaviour
     {
         distanceFromTheJointPoint = Vector2.Distance(transform.position, springJoint2D.connectedAnchor);
 
-        if(distanceFromTheJointPoint >= distanceMaxForGrap)
+        if (distanceFromTheJointPoint >= distanceMaxForGrap)
         {
             springJoint2D.frequency += Time.deltaTime / 2;
         }

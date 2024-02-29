@@ -4,19 +4,21 @@ public class ObjectColorProperties : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private ScriptableObjectColor startColor;
-    public ScriptableObjectColor actualColor;
     [SerializeField] private ScriptableObjectColor noColor;
+    public ScriptableObjectColor actualColor;
 
     public bool isColorless;
 
     public void SwitchColor(ScriptableObjectColor colorToSwitchTo)
     {
+        Debug.Log("switch color : " +  colorToSwitchTo);
         actualColor = colorToSwitchTo;
         spriteRenderer.color = actualColor.color;
         CheckIfColorless();
+        gameObject.layer = colorToSwitchTo.colorLayer;
     }
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         SwitchColor(startColor);
@@ -32,7 +34,7 @@ public class ObjectColorProperties : MonoBehaviour
     public void StealColor(out ScriptableObjectColor colorStealed)
     {
         colorStealed = actualColor;
-        SwitchColor(noColor);
+        SwitchColor(PlayerAbsorbSpitColorManager.Instance.noColor);
         CheckIfColorless();
     }
 

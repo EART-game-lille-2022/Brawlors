@@ -4,4 +4,5 @@ using UnityEngine;
 public class ScriptableObjectColor : ScriptableObject
 {
     public Color color;
+    public int colorLayer;
 }

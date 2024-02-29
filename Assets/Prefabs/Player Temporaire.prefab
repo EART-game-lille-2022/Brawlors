@@ -184,11 +184,11 @@ GameObject:
   - component: {fileID: 10995893295530005}
   - component: {fileID: 7522467977988035288}
   - component: {fileID: 1630379047599305010}
+  - component: {fileID: 2767135958545821044}
   - component: {fileID: 5487485923840442513}
   - component: {fileID: 2660293781728877143}
   - component: {fileID: 8487975521541618979}
   - component: {fileID: 125988946634378181}
-  - component: {fileID: 2767135958545821044}
   m_Layer: 3
   m_Name: Player Temporaire
   m_TagString: Player
@@ -241,10 +241,19 @@ MonoBehaviour:
   playerSpriteRenderer: {fileID: 8487975521541618979}
   playerBag1: {fileID: 8495335811292531901}
   playerBag2: {fileID: 2748836048761022947}
+  defaultColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   colorBag:
   - {fileID: 11400000, guid: d505e01521bd64040a498d111ee49b12, type: 2}
   - {fileID: 11400000, guid: 2efbbe3b3ce8a8d419de19f67e797167, type: 2}
   - {fileID: 11400000, guid: 08a42f2e3ce2bfc4981bcccd6f72833f, type: 2}
+  layerMaskFinal:
+    serializedVersion: 2
+    m_Bits: 0
+  levitator: {fileID: 2767135958545821044}
+  defaultMask:
+    serializedVersion: 2
+    m_Bits: 32567
+  playerLayer: 3
 --- !u!114 &10995893295530005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +269,7 @@ MonoBehaviour:
   springJoint2D: {fileID: 5487485923840442513}
   colliderToVerify:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 32567
   grappedObject: {fileID: 0}
   distanceMaxForGrap: 6
   distanceFromTheJointPoint: 0
@@ -282,6 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerGrapUngrapManager: {fileID: 10995893295530005}
   _playerColorManager: {fileID: 4280473121733653115}
+  objectToSpit: {fileID: 8517920027360573297, guid: 8bf9f9c067280ce499801ddb789eed11, type: 3}
+  noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   colorStored: {fileID: 0}
 --- !u!114 &1630379047599305010
 MonoBehaviour:
@@ -356,11 +367,34 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 137f9835-d06f-4d77-a5ed-c646d9438fd0
     m_ActionName: Keyboard/Absorb/Spit[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c88c864-136c-4795-87ec-7bdb96a0f8bd
+    m_ActionName: Keyboard/Jump[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2767135958545821044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623002509927238230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b83ef494531b644b80444b1d075199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 32567
+  targetHeight: 3
+  force: 10
+  jumpImpulse: 2
+  cooldownForJump: 2
 --- !u!231 &5487485923840442513
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -496,24 +530,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2767135958545821044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5623002509927238230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b83ef494531b644b80444b1d075199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 55
-  targetHeight: 3
-  force: 10
-  jumpImpulse: 0
 --- !u!1 &8412591187752682992
 GameObject:
   m_ObjectHideFlags: 0
