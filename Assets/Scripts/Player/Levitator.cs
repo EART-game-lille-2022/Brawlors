@@ -26,6 +26,14 @@ public class Levitator : MonoBehaviour
         }
     }
 
+    public void InversedJump(InputAction.CallbackContext context)
+    {
+        if (timeElapsed >= cooldownForJump)
+        {
+            rb2D.AddForce(Vector2.down * jumpImpulse, ForceMode2D.Impulse);
+            timeElapsed = 0;
+        }
+    }
     void FixedUpdate()
     {
         timeElapsed += Time.fixedDeltaTime;
