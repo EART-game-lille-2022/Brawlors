@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerKeys : MonoBehaviour
 {
-    [SerializeField] private List<KeyUnit> keysBag;
+    [SerializeField] private List<KeyUnit> keysBag = new List<KeyUnit>();
 
     public void AddKey(KeyUnit keyAdded)
     {
