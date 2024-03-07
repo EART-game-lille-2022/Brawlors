@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ColorAndLayerManager : MonoBehaviour
@@ -50,7 +49,7 @@ public class ColorAndLayerManager : MonoBehaviour
         colorBag[0] = colorBag[1];
         colorBag[1] = colorBag[2];
         colorBag[2] = defaultColor;
-        
+
         ApplyColorOnPlayerAndBag();
     }
 
@@ -71,13 +70,25 @@ public class ColorAndLayerManager : MonoBehaviour
     {
         levitator.layerMask = layerMaskFinal;
     }
-    
+
     public void ApplyColorAndLayerMaskOnObject(GameObject objectToModify)
     {
-        if(objectToModify.GetComponent<ObjectColorProperties>())
+        if (objectToModify.GetComponent<ObjectColorProperties>())
         {
             objectToModify.GetComponent<ObjectColorProperties>().SwitchColor(colorBag[0]);
             RemoveColor();
+        }
+    }
+
+    public bool isBagFull()
+    {
+        if (colorBag[2] != defaultColor)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

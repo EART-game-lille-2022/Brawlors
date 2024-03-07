@@ -11,7 +11,6 @@ public class ObjectColorProperties : MonoBehaviour
 
     public void SwitchColor(ScriptableObjectColor colorToSwitchTo)
     {
-        Debug.Log("switch color : " +  colorToSwitchTo);
         actualColor = colorToSwitchTo;
         spriteRenderer.color = actualColor.color;
         CheckIfColorless();
