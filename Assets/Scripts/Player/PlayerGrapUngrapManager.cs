@@ -29,7 +29,7 @@ public class PlayerGrapUngrapManager : MonoBehaviour
     {
         distanceFromTheJointPoint = Vector2.Distance(transform.position, springJoint2D.connectedAnchor);
 
-        if (distanceFromTheJointPoint >= distanceMaxForGrap)
+        if (distanceFromTheJointPoint >= distanceMaxForGrap * 1.1f)
         {
             springJoint2D.frequency += Time.deltaTime / 2;
         }
@@ -41,6 +41,8 @@ public class PlayerGrapUngrapManager : MonoBehaviour
 
     public void GrapUngrap(InputAction.CallbackContext context)
     {
+        springJoint2D.distance = distanceMaxForGrap;
+
         Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = Camera.main.nearClipPlane;
         mousePos.z = -Camera.main.transform.position.z;
