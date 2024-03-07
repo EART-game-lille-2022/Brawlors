@@ -6,7 +6,6 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
     public static PlayerAbsorbSpitColorManager Instance { get; private set; }
 
     [SerializeField] private PlayerGrapUngrapManager _playerGrapUngrapManager;
-    [SerializeField] private ColorAndLayerManager _playerColorManager;
 
     [SerializeField] private GameObject objectToSpit;
 
@@ -16,7 +15,6 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _playerColorManager = GetComponent<ColorAndLayerManager>();
         _playerGrapUngrapManager = GetComponent<PlayerGrapUngrapManager>();
     }
 
@@ -31,11 +29,12 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
         {
             ObjectColorProperties objectGrapped = _playerGrapUngrapManager.grappedObject.GetComponent<ObjectColorProperties>();
 
-            if (objectGrapped != null && objectGrapped.isColorless == false && !_playerColorManager.isBagFull())
+            if (objectGrapped != null && objectGrapped.isColorless == false && !ColorAndLayerManager.instance.isBagFull())
             {
                 //colorStored = objectGrapped.actualColor;
                 objectGrapped.StealColor(out colorStored);
-                _playerColorManager.AddColor(colorStored);
+                ColorAndLayerManager.instance.AddColor(colorStored);
+                ColorAndLayerManager.instance.ApplyLayerMaskOnLevitator();
             }
         }
         else if (context.performed && !_playerGrapUngrapManager.isGrapActive && ColorAndLayerManager.instance.isStillAColorStored())
@@ -43,6 +42,7 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
             GameObject objectSpitted = Instantiate(objectToSpit, transform.position, Quaternion.identity);
             ColorAndLayerManager.instance.ApplyColorAndLayerMaskOnObject(objectSpitted);
             objectSpitted.GetComponent<Rigidbody2D>().AddForce((mouseWorldPos - transform.position).normalized * 12f, ForceMode2D.Impulse);
+            ColorAndLayerManager.instance.ApplyLayerMaskOnLevitator();
         }
     }
 }
