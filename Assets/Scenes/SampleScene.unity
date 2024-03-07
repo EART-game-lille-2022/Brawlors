@@ -9570,6 +9570,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2767135958545821044, guid: 762a8ae54b1785342baf1156e980666a, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 32567
+      objectReference: {fileID: 0}
     - target: {fileID: 3730576274195907653, guid: 762a8ae54b1785342baf1156e980666a, type: 3}
       propertyPath: m_Layer
       value: 3
