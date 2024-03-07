@@ -28,6 +28,7 @@ public class ColorAndLayerManager : MonoBehaviour
     private void Start()
     {
         ApplyColorOnPlayerAndBag();
+        ApplyLayerMaskOnLevitator();
     }
 
     public void AddColor(ScriptableObjectColor colorAdded)
@@ -59,7 +60,13 @@ public class ColorAndLayerManager : MonoBehaviour
         // gameObject.layer = colorBag[0].colorLayer;
         // default mask without the color's layer
 
-        layerMaskFinal = defaultMask & ~(1 << colorBag[0].colorLayer);
+        if (colorBag[0] == defaultColor)
+            layerMaskFinal = defaultMask;
+        else
+            layerMaskFinal = defaultMask & ~(1 << colorBag[0].colorLayer);
+
+        // defaultMask.Substract(colorBag[0].colorLayer);
+
         Physics2D.SetLayerCollisionMask(playerLayer, layerMaskFinal);
 
         playerBag1.color = colorBag[1].color;
