@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,21 +22,27 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
 
     public void AbsorbSpitColor(InputAction.CallbackContext context)
     {
-        if(context.performed && _playerGrapUngrapManager.isGrapActive)
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = Camera.main.nearClipPlane;
+        mousePos.z = -Camera.main.transform.position.z;
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        if (context.performed && _playerGrapUngrapManager.isGrapActive)
         {
             ObjectColorProperties objectGrapped = _playerGrapUngrapManager.grappedObject.GetComponent<ObjectColorProperties>();
 
-            if(objectGrapped != null && objectGrapped.isColorless == false)
+            if (objectGrapped != null && objectGrapped.isColorless == false && !_playerColorManager.isBagFull())
             {
                 //colorStored = objectGrapped.actualColor;
                 objectGrapped.StealColor(out colorStored);
                 _playerColorManager.AddColor(colorStored);
             }
         }
-        else if(context.performed && !_playerGrapUngrapManager.isGrapActive && ColorAndLayerManager.instance.isStillAColorStored())
+        else if (context.performed && !_playerGrapUngrapManager.isGrapActive && ColorAndLayerManager.instance.isStillAColorStored())
         {
             GameObject objectSpitted = Instantiate(objectToSpit, transform.position, Quaternion.identity);
             ColorAndLayerManager.instance.ApplyColorAndLayerMaskOnObject(objectSpitted);
+            objectSpitted.GetComponent<Rigidbody2D>().AddForce((mouseWorldPos - transform.position).normalized * 12f, ForceMode2D.Impulse);
         }
     }
 }
