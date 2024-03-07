@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e8ddf96201b824fb9c0d5b16d71f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 5
 --- !u!114 &4280473121733653115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32567
   grappedObject: {fileID: 0}
-  distanceMaxForGrap: 6
+  distanceMaxForGrap: 5
   distanceFromTheJointPoint: 0
   startingFrequencyForJoint: 0.01
   grapCooldown: 0.25
@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerGrapUngrapManager: {fileID: 10995893295530005}
-  _playerColorManager: {fileID: 4280473121733653115}
   objectToSpit: {fileID: 8517920027360573297, guid: 8bf9f9c067280ce499801ddb789eed11, type: 3}
   noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   colorStored: {fileID: 0}
@@ -368,9 +367,29 @@ MonoBehaviour:
     m_ActionId: 137f9835-d06f-4d77-a5ed-c646d9438fd0
     m_ActionName: Keyboard/Absorb/Spit[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3c88c864-136c-4795-87ec-7bdb96a0f8bd
     m_ActionName: Keyboard/Jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e2c7a935-0f6f-4007-ae0f-b7c859a471a8
+    m_ActionName: Controller XBOX/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 850c40c7-8a5d-4304-a442-474c0ad15814
+    m_ActionName: Keyboard/InversedJump[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard
@@ -391,10 +410,10 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 32567
-  targetHeight: 3
-  force: 10
-  jumpImpulse: 2
-  cooldownForJump: 2
+  targetHeight: 4
+  force: 5
+  jumpImpulse: 22.45
+  cooldownForJump: 1
 --- !u!231 &5487485923840442513
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -413,9 +432,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -2.82, y: 3.02}
   m_AutoConfigureDistance: 0
-  m_Distance: 6
+  m_Distance: 5
   m_DampingRatio: 0
-  m_Frequency: 0.09
+  m_Frequency: 0.1
 --- !u!50 &2660293781728877143
 Rigidbody2D:
   serializedVersion: 4
