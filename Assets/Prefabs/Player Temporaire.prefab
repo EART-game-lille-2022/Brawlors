@@ -183,12 +183,13 @@ GameObject:
   - component: {fileID: 4280473121733653115}
   - component: {fileID: 10995893295530005}
   - component: {fileID: 7522467977988035288}
-  - component: {fileID: 1630379047599305010}
   - component: {fileID: 2767135958545821044}
+  - component: {fileID: 2315699884591611574}
   - component: {fileID: 5487485923840442513}
   - component: {fileID: 2660293781728877143}
   - component: {fileID: 8487975521541618979}
   - component: {fileID: 125988946634378181}
+  - component: {fileID: 1630379047599305010}
   m_Layer: 3
   m_Name: Player Temporaire
   m_TagString: Player
@@ -293,108 +294,6 @@ MonoBehaviour:
   objectToSpit: {fileID: 8517920027360573297, guid: 8bf9f9c067280ce499801ddb789eed11, type: 3}
   noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   colorStored: {fileID: 0}
---- !u!114 &1630379047599305010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5623002509927238230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 21a19fafdf7110c4583d3d1ab2a17413, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5425463850022955237}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: DoMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 06da969d-cdae-4d12-8818-0327792bc4c0
-    m_ActionName: Keyboard/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 10995893295530005}
-        m_TargetAssemblyTypeName: PlayerGrapSystem, Assembly-CSharp
-        m_MethodName: GrapUngrap
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9f9176d4-49db-4e8d-bc99-03f8da1ec67b
-    m_ActionName: Keyboard/Grap/Ungrap[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7522467977988035288}
-        m_TargetAssemblyTypeName: PlayerAbsorbSpitColorManager, Assembly-CSharp
-        m_MethodName: AbsorbSpitColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 137f9835-d06f-4d77-a5ed-c646d9438fd0
-    m_ActionName: Keyboard/Absorb/Spit[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 3c88c864-136c-4795-87ec-7bdb96a0f8bd
-    m_ActionName: Keyboard/Jump[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e2c7a935-0f6f-4007-ae0f-b7c859a471a8
-    m_ActionName: Controller XBOX/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 850c40c7-8a5d-4304-a442-474c0ad15814
-    m_ActionName: Keyboard/InversedJump[/Keyboard/s]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Keyboard
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &2767135958545821044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,8 +311,21 @@ MonoBehaviour:
     m_Bits: 32567
   targetHeight: 4
   force: 5
-  jumpImpulse: 22.45
+  jumpImpulse: 8
   cooldownForJump: 1
+--- !u!114 &2315699884591611574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623002509927238230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c667503525920d348aad9e66b08e0763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysBag: []
 --- !u!231 &5487485923840442513
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -549,6 +461,120 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1630379047599305010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623002509927238230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 21a19fafdf7110c4583d3d1ab2a17413, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5425463850022955237}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: DoMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 06da969d-cdae-4d12-8818-0327792bc4c0
+    m_ActionName: Keyboard/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 10995893295530005}
+        m_TargetAssemblyTypeName: PlayerGrapSystem, Assembly-CSharp
+        m_MethodName: GrapUngrap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9f9176d4-49db-4e8d-bc99-03f8da1ec67b
+    m_ActionName: Keyboard/Grap/Ungrap[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7522467977988035288}
+        m_TargetAssemblyTypeName: PlayerAbsorbSpitColorManager, Assembly-CSharp
+        m_MethodName: AbsorbSpitColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 137f9835-d06f-4d77-a5ed-c646d9438fd0
+    m_ActionName: Keyboard/Absorb/Spit[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2767135958545821044}
+        m_TargetAssemblyTypeName: Levitator, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3c88c864-136c-4795-87ec-7bdb96a0f8bd
+    m_ActionName: Keyboard/Jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e2c7a935-0f6f-4007-ae0f-b7c859a471a8
+    m_ActionName: Controller XBOX/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2767135958545821044}
+        m_TargetAssemblyTypeName: Levitator, Assembly-CSharp
+        m_MethodName: InversedJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 850c40c7-8a5d-4304-a442-474c0ad15814
+    m_ActionName: Keyboard/InversedJump[/Keyboard/s]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Keyboard
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8412591187752682992
 GameObject:
   m_ObjectHideFlags: 0
