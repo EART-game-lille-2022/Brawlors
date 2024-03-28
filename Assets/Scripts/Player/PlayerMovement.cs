@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     private Rigidbody2D rb2D;
     [SerializeField] private float moveSpeed;
+    public bool warpingCooldown = false;
 
     private void Awake()
     {
