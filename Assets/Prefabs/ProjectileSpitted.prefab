@@ -53,6 +53,9 @@ MonoBehaviour:
   noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   actualColor: {fileID: 0}
   isColorless: 0
+  OnColorChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &7640995914319613891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -179,5 +182,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218da4c40c4428e46a3e823d8503e640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectColors: {fileID: 0}
+  _objectColors: {fileID: -6684054898172881848}
   lifeDuration: 1
