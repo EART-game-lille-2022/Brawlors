@@ -18,15 +18,28 @@ public class PlayerGrapUngrapManager : MonoBehaviour
     [SerializeField] private bool canGrap;
     public bool isGrapActive;
 
+    public LineRenderer lineRenderer;
+
     private void Start()
     {
         canGrap = true;
         springJoint2D = GetComponent<SpringJoint2D>();
         springJoint2D.frequency = startingFrequencyForJoint;
     }
+    float ropeTime = 0.0f;
+    public AnimationCurve ropeCurve;
+    public AnimationCurve ropeSpring;
+    public float curveAmount = 10;
+    public int ropeQuality = 10;
 
     private void Update()
     {
+        lineRenderer.enabled = springJoint2D.enabled;
+        if (!springJoint2D.enabled)
+        {
+            ropeTime = 0;
+            return;
+        }
         distanceFromTheJointPoint = Vector2.Distance(transform.position, springJoint2D.connectedAnchor);
 
         if (distanceFromTheJointPoint >= distanceMaxForGrap * 1.1f)
@@ -37,7 +50,25 @@ public class PlayerGrapUngrapManager : MonoBehaviour
         {
             springJoint2D.frequency = startingFrequencyForJoint;
         }
+
+        Quaternion qrot = Quaternion.LookRotation(springJoint2D.connectedAnchor - (Vector2)transform.position);
+
+        if (lineRenderer)
+        {
+            int resolution = Mathf.RoundToInt(ropeQuality * distanceFromTheJointPoint);
+            lineRenderer.positionCount = resolution;
+            Vector3[] points = new Vector3[resolution];
+            for (int i = 0; i < resolution; i ++) {
+                float t = i / (float) resolution;
+                points[i] = Vector3.Lerp(transform.position, springJoint2D.connectedAnchor, t) + qrot*new Vector3(0, curveAmount* ropeSpring.Evaluate(ropeTime) * ropeCurve.Evaluate(t) , 0);
+            }
+            lineRenderer.SetPositions(points);
+
+            ropeTime += Time.deltaTime;
+        }
+
     }
+    
 
     public void GrapUngrap(InputAction.CallbackContext context)
     {

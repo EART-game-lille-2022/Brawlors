@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4455179784092181293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.18, y: -1.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,6 +51,9 @@ MonoBehaviour:
   noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   actualColor: {fileID: 11400000, guid: 2efbbe3b3ce8a8d419de19f67e797167, type: 2}
   isColorless: 0
+  OnColorChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &496563677815895154
 SpriteRenderer:
   m_ObjectHideFlags: 0

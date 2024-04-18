@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectColorProperties : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ObjectColorProperties : MonoBehaviour
     public ScriptableObjectColor actualColor;
 
     public bool isColorless;
+    
+    public UnityEvent<ScriptableObjectColor> OnColorChange;
 
     public void SwitchColor(ScriptableObjectColor colorToSwitchTo)
     {
@@ -15,6 +18,8 @@ public class ObjectColorProperties : MonoBehaviour
         spriteRenderer.color = actualColor.color;
         CheckIfColorless();
         gameObject.layer = colorToSwitchTo.colorLayer;
+
+        OnColorChange.Invoke(colorToSwitchTo);
     }
 
     private void Awake()
