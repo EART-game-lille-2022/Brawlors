@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,9 +41,17 @@ public class PlayerAbsorbSpitColorManager : MonoBehaviour
         else if (context.performed && !_playerGrapUngrapManager.isGrapActive && ColorAndLayerManager.instance.isStillAColorStored())
         {
             GameObject objectSpitted = Instantiate(objectToSpit, transform.position, Quaternion.identity);
+            StartCoroutine(spittedObjectColliderTimer(objectSpitted));
             ColorAndLayerManager.instance.ApplyColorAndLayerMaskOnObject(objectSpitted);
             objectSpitted.GetComponent<Rigidbody2D>().AddForce((mouseWorldPos - transform.position).normalized * 12f, ForceMode2D.Impulse);
             ColorAndLayerManager.instance.ApplyLayerMaskOnLevitator();
         }
+    }
+
+    public IEnumerator spittedObjectColliderTimer(GameObject Object)
+    {
+        Object.GetComponent<CircleCollider2D>().isTrigger = true;
+        yield return new WaitForSeconds(0.08f);
+        Object.GetComponent<CircleCollider2D>().isTrigger = false;
     }
 }

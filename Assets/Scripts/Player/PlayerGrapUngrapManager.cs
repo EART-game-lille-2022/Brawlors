@@ -50,7 +50,7 @@ public class PlayerGrapUngrapManager : MonoBehaviour
         {
             springJoint2D.frequency = startingFrequencyForJoint;
         }
-
+        //NELLO---
         Quaternion qrot = Quaternion.LookRotation(springJoint2D.connectedAnchor - (Vector2)transform.position);
 
         if (lineRenderer)
@@ -66,7 +66,7 @@ public class PlayerGrapUngrapManager : MonoBehaviour
 
             ropeTime += Time.deltaTime;
         }
-
+        //NELLO---
     }
     
 
