@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1026677516198514620}
   - component: {fileID: 8495335811292531901}
-  - component: {fileID: 764397963170371685}
   - component: {fileID: 1981984103848493347}
   - component: {fileID: 5435618022751356594}
+  - component: {fileID: 9049898740252483157}
   m_Layer: 3
   m_Name: ColorBag1
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,41 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &764397963170371685
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3730576274195907653}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &1981984103848493347
 Rigidbody2D:
   serializedVersion: 4
@@ -167,9 +132,44 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.78
+  m_Distance: 0.58500004
   m_DampingRatio: 1
   m_Frequency: 1
+--- !u!58 &9049898740252483157
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730576274195907653}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &3868690327318336619
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1026677516198514620}
@@ -382,9 +382,9 @@ MonoBehaviour:
   playerBag2: {fileID: 2748836048761022947}
   defaultColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   colorBag:
-  - {fileID: 11400000, guid: d505e01521bd64040a498d111ee49b12, type: 2}
-  - {fileID: 11400000, guid: 2efbbe3b3ce8a8d419de19f67e797167, type: 2}
-  - {fileID: 11400000, guid: 08a42f2e3ce2bfc4981bcccd6f72833f, type: 2}
+  - {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
+  - {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
+  - {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   layerMaskFinal:
     serializedVersion: 2
     m_Bits: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32567
   grappedObject: {fileID: 0}
-  distanceMaxForGrap: 15
+  distanceMaxForGrap: 5
   distanceFromTheJointPoint: 0
   startingFrequencyForJoint: 0.01
   grapCooldown: 0.25
@@ -543,9 +543,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 32567
-  targetHeight: 4
+  targetHeight: 2
   force: 5
-  jumpImpulse: 8
+  jumpImpulse: 3
   cooldownForJump: 1
 --- !u!114 &2315699884591611574
 MonoBehaviour:
@@ -578,7 +578,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -2.82, y: 3.02}
   m_AutoConfigureDistance: 0
-  m_Distance: 5
+  m_Distance: 6
   m_DampingRatio: 0
   m_Frequency: 0.1
 --- !u!50 &2660293781728877143
@@ -648,7 +648,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -785,10 +785,6 @@ MonoBehaviour:
     m_ActionId: 3c88c864-136c-4795-87ec-7bdb96a0f8bd
     m_ActionName: Keyboard/Jump[/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e2c7a935-0f6f-4007-ae0f-b7c859a471a8
-    m_ActionName: Controller XBOX/New action
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2767135958545821044}
         m_TargetAssemblyTypeName: Levitator, Assembly-CSharp
@@ -804,6 +800,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 850c40c7-8a5d-4304-a442-474c0ad15814
     m_ActionName: Keyboard/InversedJump[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2767135958545821044}
+        m_TargetAssemblyTypeName: Levitator, Assembly-CSharp
+        m_MethodName: InversedJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e2c7a935-0f6f-4007-ae0f-b7c859a471a8
+    m_ActionName: Controller XBOX/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard
@@ -819,9 +831,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4055214429093637733}
   - component: {fileID: 2748836048761022947}
-  - component: {fileID: 601041023949413833}
   - component: {fileID: 9170150891426605788}
   - component: {fileID: 5102153595767111660}
+  - component: {fileID: 3240837467017376427}
   m_Layer: 3
   m_Name: ColorBag2
   m_TagString: Untagged
@@ -884,7 +896,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -896,41 +908,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &601041023949413833
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8412591187752682992}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &9170150891426605788
 Rigidbody2D:
   serializedVersion: 4
@@ -976,6 +953,41 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.1500001
+  m_Distance: 0.8625002
   m_DampingRatio: 1
   m_Frequency: 1
+--- !u!58 &3240837467017376427
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412591187752682992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
