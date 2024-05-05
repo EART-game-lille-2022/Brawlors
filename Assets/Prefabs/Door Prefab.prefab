@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174f3ccb45cfc7c49af82031dadc537d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorOfTheKeyNeeded: {fileID: 11400000, guid: d505e01521bd64040a498d111ee49b12, type: 2}
+  colorOfTheKeyNeeded: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   spriteRenderer: {fileID: 5977942127964120406}
 --- !u!212 &5977942127964120406
 SpriteRenderer:
