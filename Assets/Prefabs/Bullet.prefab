@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1275937160964210202}
   - component: {fileID: 5096896670183713639}
   - component: {fileID: -4087041619135089645}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3738851667271105794}
   startColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
   noColor: {fileID: 11400000, guid: bc4a612699150ea4a8724fde741e5cce, type: 2}
-  actualColor: {fileID: 11400000, guid: d505e01521bd64040a498d111ee49b12, type: 2}
+  actualColor: {fileID: 11400000, guid: f78564956b5702e429cad3a3e4d8f1d6, type: 2}
   isColorless: 0
   OnColorChange:
     m_PersistentCalls:
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.40392157, g: 0.7882353, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.25490198, b: 0.21176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -183,5 +183,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectColors: {fileID: 1875609427575629287}
-  lifeDuration: 1
+  lifeDuration: 0.5
   bulletSpeed: 20

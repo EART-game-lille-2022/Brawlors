@@ -134,7 +134,7 @@ MonoBehaviour:
   canonColor: {fileID: 1046579828648020950}
   bulletPrefab: {fileID: 8202179208135797578, guid: 8f949f6183c8907468b6ecc38669ea68, type: 3}
   bulletSpawnPos: {fileID: 1743585332213502835}
-  bulletSpawnRate: 0.5
+  bulletSpawnRate: 0.05
 --- !u!114 &1046579828648020950
 MonoBehaviour:
   m_ObjectHideFlags: 0
