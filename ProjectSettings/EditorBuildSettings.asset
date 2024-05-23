@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2ca6bac2b367e7d4481d5f7899e6632e
   - enabled: 1
+    path: Assets/Scenes/Level_Menu.unity
+    guid: a57038712eee56947b4eee11d414b98e
+  - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 1d4ba43e17b339e46a2426751ad6ae0f
   - enabled: 1
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_5.unity
     guid: 865ef2b6ac3cb1443b87d42669616cea
+  - enabled: 1
+    path: Assets/Scenes/Level_6.unity
+    guid: b1341abc15be0de4992ecf67adac1dc0
   - enabled: 1
     path: Assets/tim/museum.unity
     guid: fe73d86792105f5429b7d0b9f9ba67f8
